@@ -3,7 +3,7 @@ let client = require("../dbConnect"); // we need to make use this client here
 let projectCollection;
 
 setTimeout(() => {
-    projectCollection = client.mongoClient.db().collection("Project");
+    projectCollection = client.db().collection("Project");
 }, 2000)
 
 //insert project...
@@ -15,6 +15,5 @@ const insertProjects = (project,callback) => {
 const getProjects = (callback) => {
     projectCollection.find({}).toArray(callback);
 }
-
 
 module.exports = {insertProjects, getProjects}
