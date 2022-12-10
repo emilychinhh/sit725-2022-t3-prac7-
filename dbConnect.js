@@ -1,5 +1,4 @@
 // add all the database connection host in this file
-
 require('dotenv').config()
 
 //mongoDB connection...
