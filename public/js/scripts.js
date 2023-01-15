@@ -1,8 +1,14 @@
+// connect to the socket prac 7
+let socket = io();
+socket.on('number', (msg) => {
+    console.log('Random number: ' + msg);
+})
+
 const getProjects = () => {
     $.get('/api/projects',(response) => {
         if(response.statusCode==200){
             addCards(response.data);
-        }
+       }
     })
 }
 
@@ -56,3 +62,5 @@ $(document).ready(function(){
     getProjects();
     $('.modal').modal();
   });
+
+
